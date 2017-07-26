@@ -1,0 +1,25 @@
+{
+  "name": "seed-aprajita",
+  "version": "1.0.0",
+  "description": "Seed Application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MistyShrivastava/aprajita-seed.git"
+  },
+  "author": "Aprajita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MistyShrivastava/aprajita-seed/issues"
+  },
+  "homepage": "https://github.com/MistyShrivastava/aprajita-seed#readme",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "express": "^4.15.3",
+    "ng-redux": "^3.4.0-beta.1"
+  }
+}
