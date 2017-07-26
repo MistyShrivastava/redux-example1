@@ -3,4 +3,4 @@
 - Simple application for understanding redux
 - clone repo
 - npm install
-- node server.js
+- npm start
