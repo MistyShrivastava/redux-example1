@@ -13,7 +13,7 @@ angular.module('demo').directive('listDirective', function () {
       scope.add = function() {
         scope.list.push({value: '', isAdded: false});
       }
-      scope.remove = function(index) {
+      scope.removeItem = function(index) {
         scope.list.splice(index, 1);
       }
     }
