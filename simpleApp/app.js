@@ -1,6 +1,9 @@
 
 var app = angular.module('demo', []);
 
+//check the number of watchers that are going to be fired with each action
+//both directive can modify the data - it would be tougher to identify which action changed the state
+
 angular.module('demo').directive('listDirective', function () {  
   return {
     templateUrl: './simpleApp/list.html',
