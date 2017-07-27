@@ -7,6 +7,9 @@ angular.module('demo').service('MyRedux', function (){
 
 angular.module('demo').service('listReducer', function () {
   return function(state = {list: []}, action) {
+
+    // Update reducer to leverage Immutable 
+
     switch (action.type) {
       case 'ADD_FRIEND':
        state.list = state.list.push(Immutable.Map({value: '', isAdded: false}));
@@ -17,6 +20,8 @@ angular.module('demo').service('listReducer', function () {
       case 'CONFIRM':
         state.list = state.list.setIn([action.index, 'isAdded'] ,true)
         return state;
+
+      //Explicitely triggering Modify action 
       case 'MODIFY':
         state.list = state.list.setIn([action.index, 'value'], action.value);
         return state;
@@ -27,6 +32,8 @@ angular.module('demo').service('listReducer', function () {
 });
 
 angular.module('demo').service('appStore', ['MyRedux', 'listReducer', function (Redux, listReducer) {
+  //  change our initialState to an Immutable
+
   var initialState = { list: Immutable.List([]) };  
   return Redux.createStore(listReducer, initialState);
 }]);
@@ -37,6 +44,7 @@ angular.module('demo').directive('listDirective', function (appStore) {
     restrict: 'E',
     link: function(scope) {
       appStore.subscribe(function (state) {
+        // Immutable are converted back for ease of rendering
        scope.list = appStore.getState().list.toJS(); 
       })
       
