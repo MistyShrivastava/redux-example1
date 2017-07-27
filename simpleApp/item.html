@@ -1,0 +1,8 @@
+<div class="well">
+<div ng-if="item.isAdded">{{item.value}}</div>
+<br>
+<input ng-if="!item.isAdded" ng-model="item.value" ></input>
+<button ng-if="!item.isAdded" ng-click="confirm()" class="btn btn-warning">Confirm</button>
+<button ng-if="item.isAdded" ng-click="remove()" class="btn btn-danger">Remove Friend</button>
+<br>
+</div>

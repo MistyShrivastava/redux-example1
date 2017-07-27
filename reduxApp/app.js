@@ -32,7 +32,7 @@ angular.module('demo').service('appStore', ['MyRedux', 'listReducer', function (
 
 angular.module('demo').directive('listDirective', function (appStore) {
   return {
-    templateUrl: './app/list.html',
+    templateUrl: './reduxApp/list.html',
     restrict: 'E',
     link: function(scope) {
       appStore.subscribe(function (state) {
@@ -51,7 +51,7 @@ angular.module('demo').directive('listDirective', function (appStore) {
 
 angular.module('demo').directive('listItem', function (appStore) {
   return {
-    templateUrl: './app/item.html',
+    templateUrl: './reduxApp/item.html',
     restrict: 'E',
     scope: {
       item: '=',
